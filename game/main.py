@@ -115,8 +115,8 @@ class Game:
         # img, rect = Game.get_img_info(LOGO)
         # self.logo = create_button(self.screen, img, rect, 'logo')
 
-        # img, rect = Game.get_img_info(SHUFFLE_BTN)
-        # self.shuffle = create_button(self.screen, img, rect, 'shuffle', 'hand')
+        img, rect = Game.get_img_info(SHUFFLE_BTN)
+        self.shuffle = create_button(self.screen, img, rect, 'shuffle', 'hand')
 
 
         # if store.show_clicked:
