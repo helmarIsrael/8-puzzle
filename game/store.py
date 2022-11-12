@@ -4,9 +4,9 @@ puzzle_solved = True
 start_shuffle = False
 shuffle_times = 0
 solving = False
-active_algo = 'bfs'
+active_algo = ''
 algorithms = {
-    'bfs': 'selected',
+    'bfs': 'not-selected',
     'astar': 'not-selected'
 }
 
