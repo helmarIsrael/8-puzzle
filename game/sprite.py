@@ -21,7 +21,7 @@ class Tile(pygame.sprite.Sprite):
         self.write_text()
 
 
-    def draw_rects(self, r=20):
+    def draw_rects(self, r=0):
         """
         :param r: border_radius
         """
