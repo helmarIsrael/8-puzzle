@@ -10,12 +10,12 @@ def create_button(screen, img, rect, type, cursor='arrow'):
         rect.y = (NAV_HEIGHT - h) / 2
 
     if type == 'shuffle':
-        rect.x = WIDTH - w - 10
-        rect.y = (NAV_HEIGHT - h) / 2
+        rect.x = ((WIDTH - w) / 2) - 100
+        rect.y = HEIGHT - NAV_HEIGHT - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * -500)
 
     if type == 'solve':
-        rect.x = ((WIDTH - w) / 2) + 10
-        rect.y = HEIGHT - NAV_HEIGHT - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * 100 - 80)
+        rect.x = ((WIDTH - w) / 2) + 100
+        rect.y = HEIGHT - NAV_HEIGHT - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * -500)
 
     if type == 'help-btn':
         rect.x = WIDTH - w - 20
