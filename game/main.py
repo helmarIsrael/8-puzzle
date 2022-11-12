@@ -111,12 +111,16 @@ class Game:
         self.nav_rect.draw_nav(self.screen, BGCOLOR, WIDTH, NAV_HEIGHT+30)
         self.nav_rect.draw_nav(self.screen, TILE_COLOR, WIDTH, NAV_HEIGHT)
 
-        # # Buttons
-        # img, rect = Game.get_img_info(LOGO)
-        # self.logo = create_button(self.screen, img, rect, 'logo')
+        # Buttons
 
         img, rect = Game.get_img_info(SHUFFLE_BTN)
         self.shuffle = create_button(self.screen, img, rect, 'shuffle', 'hand')
+
+        img, rect = Game.get_img_info(ASTAR_BTN)
+        self.astar = create_button(self.screen, img, rect, 'astar', 'hand')
+
+        img, rect = Game.get_img_info(BFS_BTN)
+        self.bfs = create_button(self.screen, img, rect, 'bfs', 'hand')
 
 
         # if store.show_clicked:
@@ -137,12 +141,12 @@ class Game:
         #     img, rect = Game.get_img_info(HELP_TEXT)
         #     self.help_text = create_button(self.screen, img, rect, 'help-text')
 
-        # for algo, state in store.algorithms.items():
-        #     img_file = STATIC + algo + '-' + state + '.png'
-        #     img, rect = Game.get_img_info(img_file)
-        #     # Create a global variable for each algorithm,
-        #     # so that it becomes accessible by other methods
-        #     globals()[algo] = create_button(self.screen, img, rect, algo, 'hand')
+        for algo, state in store.algorithms.items():
+            img_file = STATIC + algo + '-' + state + '.png'
+            img, rect = Game.get_img_info(img_file)
+            # Create a global variable for each algorithm,
+            # so that it becomes accessible by other methods
+            globals()[algo] = create_button(self.screen, img, rect, algo, 'hand')
 
 
     @staticmethod
