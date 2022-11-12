@@ -26,12 +26,12 @@ def create_button(screen, img, rect, type, cursor='arrow'):
         rect.y = int(HEIGHT - (NAV_HEIGHT*2))
 
     if type == 'bfs':
-        rect.x = 10
-        rect.y = HEIGHT - NAV_HEIGHT - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * 100 - 150)
+        rect.x = 150
+        rect.y = HEIGHT - NAV_HEIGHT - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * 100 - 300)
 
     if type == 'astar':
-        rect.x = 10
-        rect.y = HEIGHT - NAV_HEIGHT - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * 100 - 190)
+        rect.x = 300
+        rect.y = HEIGHT - NAV_HEIGHT - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * 100 - 300)
 
     btn.draw_img(screen, img, rect)
  
