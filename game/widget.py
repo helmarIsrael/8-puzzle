@@ -11,11 +11,11 @@ def create_button(screen, img, rect, type, cursor='arrow'):
 
     if type == 'shuffle':
         rect.x = ((WIDTH - w) / 2) - 100
-        rect.y = HEIGHT - NAV_HEIGHT - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * -500)
+        rect.y = HEIGHT - (NAV_HEIGHT + 100) - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * -400)
 
     if type == 'solve':
-        rect.x = ((WIDTH - w) / 2) + 100
-        rect.y = HEIGHT - NAV_HEIGHT - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * -500)
+        rect.x = ((WIDTH - w) / 2) + 110
+        rect.y = HEIGHT - (NAV_HEIGHT + 100) - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * -400)
 
     if type == 'help-btn':
         rect.x = WIDTH - w - 20
@@ -26,12 +26,12 @@ def create_button(screen, img, rect, type, cursor='arrow'):
         rect.y = int(HEIGHT - (NAV_HEIGHT*2))
 
     if type == 'bfs':
-        rect.x = 150
-        rect.y = HEIGHT - NAV_HEIGHT - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * 100 - 300)
+        rect.x = int((WIDTH - w - 130) / 2)
+        rect.y = HEIGHT - NAV_HEIGHT - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * -150)
 
     if type == 'astar':
-        rect.x = 300
-        rect.y = HEIGHT - NAV_HEIGHT - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * 100 - 300)
+        rect.x = int((WIDTH - w + 200) / 2)
+        rect.y = HEIGHT - NAV_HEIGHT - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * -150)
 
     btn.draw_img(screen, img, rect)
  
