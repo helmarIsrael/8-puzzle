@@ -4,17 +4,17 @@ title = '8 puzzle game'
 
 WHITE = (0, 0, 0) # change this to black
 DARKGREY = (182, 141, 64) # def val sa button
-BGCOLOR = (244, 235, 208)
-TILE_COLOR = (214, 173, 96)
+BGCOLOR = (75, 75, 75)
+TILE_COLOR = (255, 255, 255)
 
-WIDTH = 550
-HEIGHT = 700
+WIDTH = 1024
+HEIGHT = 768
 FPS = 10
-TILESIZE = 130
+TILESIZE = 127.5
 GAME_SIZE = 3
-NAV_HEIGHT = 54
-TOP_MARGIN =0.6
-LEFT_MARGIN = 0.6
+NAV_HEIGHT = 0
+TOP_MARGIN = 0.6
+LEFT_MARGIN = 2.5
 BUTTON_WIDTH = TILESIZE
 BUTTON_HEIGHT = TILESIZE / 1
 
@@ -31,5 +31,5 @@ ASTAR_BTN = 'game/static/astar-not-selected.png'
 BFS_BTN = 'game/static/bfs-not-selected.png'
 
 
-FONT_STYLE = 'Fugaz One'
-FONT_SIZE = 50
+FONT_STYLE = 'Impact'
+FONT_SIZE = 100
