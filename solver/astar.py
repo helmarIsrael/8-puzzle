@@ -3,7 +3,7 @@ from .puzzle import Puzzle
 
 
 def astar_search(initial_state):
-    print('doing astar_search')
+    print('A_STAR...')
     count=0
     explored=[]
     start_node=Puzzle(initial_state,None,None,0,True)
