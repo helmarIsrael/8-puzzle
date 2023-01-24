@@ -40,7 +40,7 @@ class Game:
             grid.append(row)
 
         # Set the bottom right grid to zero
-        grid[-1][-1] = 0
+        grid[0][0] = 0
 
         return grid
 
@@ -109,7 +109,6 @@ class Game:
         # Navbar
         self.nav_rect = UIElement(0, 0)
         self.nav_rect.draw_nav(self.screen, BGCOLOR, WIDTH, NAV_HEIGHT+30)
-        self.nav_rect.draw_nav(self.screen, TILE_COLOR, WIDTH, NAV_HEIGHT)
 
         # Buttons
 
