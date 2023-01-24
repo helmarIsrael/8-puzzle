@@ -63,9 +63,6 @@ class Tile(pygame.sprite.Sprite):
         return self.rect.left <= mouse_x <= self.rect.right and \
             self.rect.top <= mouse_y <= self.rect.bottom
 
-    # def hover(self, mouse_x, mouse_y):
-    #     return self.rect.collidepoint(mouse_x, mouse_y)
-
     def right(self):
         return self.rect.x - TILESIZE >= 0
 
@@ -91,7 +88,7 @@ class UIElement:
         if self.justify == 'center':
             w,h = font.size(self.text)
             self.x = int((WIDTH - w) / 2)
-            self.y = int(HEIGHT - NAV_HEIGHT - h)
+            self.y = HEIGHT - (NAV_HEIGHT + 100) - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * -525)
         # Show the textbox only if the text is not empty
         if self.text:
             pygame.draw.rect(
@@ -136,7 +133,7 @@ class Button:
             (self.x, self.y, self.width, self.height),
             border_radius=self.roundness
         )
-        font = pygame.font.SysFont("Consolas", 30)
+        font = pygame.font.SysFont("Gill Sans MT", 30)
         text = font.render(self.text, True, self.text_colour)
         self.font_size = font.size(self.text)
         draw_x = self.x 
@@ -156,10 +153,3 @@ class Button:
         return self.x <= mouse_x <= self.x + self.width and \
             self.y <= mouse_y <= self.y + self.height
 
-    # def hover(self):
-    #     """
-    #     This function will return True if the cursor
-    #     is on top of the Button object.
-    #     False, otherwise.
-    #     """
-    #     return self.rect.collidepoint(pygame.mouse.get_pos())
