@@ -13,7 +13,7 @@ class Game:
         :param initial: the shuffled state
         """
         pygame.init()
-        self.initial = initial or [1,2,3,4,5,6,7,8,0]
+        self.initial = initial or [0,1,2,3,4,5,6,7,8]
         self.move = ''
         self.key_moves = ''
 
@@ -123,29 +123,16 @@ class Game:
         self.bfs = create_button(self.screen, img, rect, 'bfs', 'hand')
 
 
-        # if store.show_clicked:
-        img, rect = Game.get_img_info(SOLVE_BTN)
-        # elif store.puzzle_solved:
-        #     img, rect = Game.get_img_info(SOLVED_BTN)
-        # else:
-        #     img, rect = Game.get_img_info(SHOW_BTN)
-        self.solve = create_button(self.screen, img, rect, 'solve')
-        # if self.solve.hover() and not store.puzzle_solved:
-        #     pygame.mouse.set_cursor(pygame.SYSTEM_CURSOR_HAND)
 
-        # Answer Key
+        img, rect = Game.get_img_info(SOLVE_BTN)
+
+        self.solve = create_button(self.screen, img, rect, 'solve')
         self.key = UIElement(self.solve.x, self.solve.y, ' '.join(self.key_moves))
         self.key.write_text(self.screen)
-
-        # if self.help_btn.hover():
-        #     img, rect = Game.get_img_info(HELP_TEXT)
-        #     self.help_text = create_button(self.screen, img, rect, 'help-text')
 
         for algo, state in store.algorithms.items():
             img_file = STATIC + algo + '-' + state + '.png'
             img, rect = Game.get_img_info(img_file)
-            # Create a global variable for each algorithm,
-            # so that it becomes accessible by other methods
             globals()[algo] = create_button(self.screen, img, rect, algo, 'hand')
 
 
@@ -200,9 +187,6 @@ class Game:
     def update_solving_buttons(self, mode):
         """
         :param mode: States whether the move taken is automated or manual
-
-        This function updates the `Show Solution` , `Solve`, and `Solved`
-        buttons so that the system knows what solving_button to display.
         """
         if not store.puzzle_solved and mode == 'automated':
             if store.show_clicked:
@@ -270,17 +254,9 @@ class Game:
                 if event.key == pygame.K_a:
                     self.execute_move()
 
-            # # Handle tile hover
-            # for row, tiles in enumerate(self.tiles):
-            #     for col, tile in enumerate(tiles):
-            #         if tile.hover(mouse_x, mouse_y):
-            #             tile.highlight(True)
-            #         else:
-            #             tile.highlight(False)
-
     def execute_move(self):
         if self.move:
-            # search_solution(self.initial)
+            
             x = self.initial.index(0)
 
             if self.move == 'U':
