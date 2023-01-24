@@ -48,16 +48,9 @@ class Tile(pygame.sprite.Sprite):
         else:
             self.image.fill(BGCOLOR)
 
-    def highlight(self, selected):
-        if selected:
-            self.draw_rects(15)
-        else:
-            self.draw_rects()
-        self.write_text()
-
     def update(self):
         self.rect.x = self.x * TILESIZE
-        self.rect.y = self.y * TILESIZE
+        self.rect.y = self.y * TILESIZE + 50
 
     def click(self, mouse_x, mouse_y):
         return self.rect.left <= mouse_x <= self.rect.right and \
@@ -88,7 +81,7 @@ class UIElement:
         if self.justify == 'center':
             w,h = font.size(self.text)
             self.x = int((WIDTH - w) / 2)
-            self.y = HEIGHT - (NAV_HEIGHT + 100) - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * -525)
+            self.y = HEIGHT - (NAV_HEIGHT + 100) - (TILESIZE*GAME_SIZE) - (TOP_MARGIN * -800)
         # Show the textbox only if the text is not empty
         if self.text:
             pygame.draw.rect(
